@@ -16,18 +16,22 @@
   "The Who"
 ];
 let sortedarray=(name)=>{
-	return name.replace(/^(a|an|the)/i," ").trim
+	return name.replace(/^(a|an|the)\s+/i, "").trim()
 }
-let sortedband=sortedarray.sort((a,b)=>{
-	itema=sortedarray(a).toLowerCase();
-		itemb=sortedarray(b).toLowerCase();
-	 return itema.localeCompare(itemb);
-})
+
+ let sortedBandNames = bandnames.sort((a, b) => {
+      let itemA = sortedarray(a).toLowerCase();  // Process band name 'a'
+      let itemB = sortedarray(b).toLowerCase();  // Process band name 'b'
+      return itemA.localeCompare(itemB); // Compare and sort the names
+    });
+
+
+		
 		let list =document.getElementById('band');
 		 sortedband.forEach((name)=>{
 			const li = document.createElement('li');
 			 li.textContent=name;
-			 list =appendChild(li)
+			 list.appendChild(li)
 		})
 		
   </script>
