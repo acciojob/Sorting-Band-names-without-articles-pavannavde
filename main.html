@@ -20,15 +20,15 @@ let sortedarray=(name)=>{
 }
 
  let sortedBandNames = bandnames.sort((a, b) => {
-      let itemA = sortedarray(a).toLowerCase();  // Process band name 'a'
-      let itemB = sortedarray(b).toLowerCase();  // Process band name 'b'
-      return itemA.localeCompare(itemB); // Compare and sort the names
+      let itemA = sortedarray(a).toLowerCase();  
+      let itemB = sortedarray(b).toLowerCase();  
+      return itemA.localeCompare(itemB); 
     });
 
 
 		
 		let list =document.getElementById('band');
-		 sortedband.forEach((name)=>{
+		 sortedbandNames.forEach((name)=>{
 			const li = document.createElement('li');
 			 li.textContent=name;
 			 list.appendChild(li)
