@@ -1,48 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sort Without Articles</title>
-  </head>
-  <body>
-    <style>
-      body {
-        margin: 0;
-        font-family: sans-serif;
-        background: url('https://source.unsplash.com/nDqA4d5NL0k/2000x2000');
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      #bands {
-        list-style: inside square;
-        font-size: 20px;
-        background: white;
-        width: 500px;
-        margin: auto;
-        padding: 0;
-        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
-      }
-
-      #bands li {
-        border-bottom: 1px solid #efefef;
-        padding: 20px;
-      }
-
-      #bands li:last-child {
-        border-bottom: 0;
-      }
-
-      a {
-        color: #ffc600;
-        text-decoration: none;
-      }
-    </style>
-
-    <ul></ul>
-
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+<html>
+<head>
+  <title>Band Names</title>
+</head>
+<body>
+  <ul id="band"></ul>
+	<script>
+		let bandnames =[
+	 "The Rolling Stones",
+  "An Arctic Monkeys",
+  "The Beatles",
+  "Queen",
+  "A Day to Remember",
+  "Led Zeppelin",
+  "The Who"
+];
+let sortedarray=(name)=>{
+	return name.replace(/^(a|an|the)/i," ").trim
+}
+let sortedband=sortedarray.sort((a,b)=>{
+	itema=sortedarray(a).toLowerCase();
+		itemb=sortedarray(b).toLowerCase();
+	 return itema.localeCompare(itemb);
+})
+		let list =document.getElementById('band');
+		 sortedband.forEach((name)=>{
+			const li = document.createElement('li');
+			 li.textContent=name;
+			 list =appendChild(li)
+		})
+		
+  </script>
+</body>
 </html>
